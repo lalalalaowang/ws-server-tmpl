@@ -11,7 +11,7 @@ type Config struct {
 }
 
 type LoginServer struct {
-	Addr string
+	Host string
 	Port string
 }
 

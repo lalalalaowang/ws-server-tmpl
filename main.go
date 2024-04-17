@@ -1,11 +1,14 @@
 package main
 
 import (
-	"fmt"
+	"ws-server/net"
 	"ws-server/util"
 )
 
 func main() {
-	fmt.Println(util.Conf.LoginServer.Addr)
-	fmt.Println(util.Conf.LoginServer.Port)
+	server := net.NewServer(util.Conf.LoginServer.Host + ":" + util.Conf.LoginServer.Port)
+	err := server.StartServer()
+	if err != nil {
+		return
+	}
 }
